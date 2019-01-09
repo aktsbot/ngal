@@ -18,7 +18,7 @@ $ node server.js 1337
 
 It's boring, but here's screenshot if you must.
 
-![ngal](https://www.aktsbot.in/pub/scrots/20190110_0035.png)
+![ngal](https://www.aktsbot.in/pub/scrots/20190110_0057.png)
 
 ## References 📖
 
