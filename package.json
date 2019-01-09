@@ -1,0 +1,13 @@
+{
+  "name": "ngal",
+  "version": "0.0.1",
+  "description": "A simple image gallery generator powered by NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server"
+  },
+  "keywords": [],
+  "author": "akts <box.ashishk@gmail.com>",
+  "license": "WTFPL"
+}
