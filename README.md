@@ -5,9 +5,9 @@ ngal is a simple html gallery generator written in Nodejs. It uses flexbox for t
 ## How does it work? 🔧
 
 ```bash
-$ cd /path/to/images
-$ cp ~/Downloads/ngal/server.js .
-$ node server.js 1337
+$ sudo npm install -g ngal
+$ cd ~/Pictures
+$ ngal
 ```
 
 1. Looks for `.png` and `.jpg` files in `$CURRENT_DIR`.

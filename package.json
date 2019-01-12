@@ -1,6 +1,6 @@
 {
   "name": "ngal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple image gallery generator powered by NodeJS",
   "main": "ngal.js",
   "scripts": {
