@@ -3,11 +3,6 @@
  * This will read the current folder's file list and get only image
  * files(png and jpg). It then generates an html page with those images
  * as a gallery.
- *
- * Run this as
- * $ cd path/to/image/folder
- * $ node server.js 3010
- *
  */
 
 const http = require("http");
@@ -15,12 +10,13 @@ const url = require("url");
 const fs = require("fs");
 const path = require("path");
 
-const PORT = process.argv[2] || 3030;
+// const PORT = process.argv[2] || 3030;
 
 // as of now make sure the images are jpeg or png
 const mimeTypeMap = {
   ".png": "image/png",
   ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
   ".html": "text/html"
 };
 
@@ -28,8 +24,13 @@ const buildHTML = () => {
   // get list of files that are png and jpg
   // the map fn is used to convert spaces to %20
   const images = fs
-    .readdirSync(__dirname)
-    .filter(fileName => fileName.endsWith(".jpg") || fileName.endsWith(".png"))
+    .readdirSync(process.cwd())
+    .filter(
+      fileName =>
+        fileName.endsWith(".jpeg") ||
+        fileName.endsWith(".jpg") ||
+        fileName.endsWith(".png")
+    )
     .map(fileName => encodeURI(fileName));
 
   let imageLinks = "";
@@ -149,6 +150,4 @@ const server = http.createServer((req, res) => {
 });
 // -- server - end
 
-server.listen(parseInt(PORT), () => {
-  console.log(`[server] listening on PORT ${PORT}`);
-});
+module.exports = server;
