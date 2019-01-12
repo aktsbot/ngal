@@ -10,8 +10,6 @@ const url = require("url");
 const fs = require("fs");
 const path = require("path");
 
-// const PORT = process.argv[2] || 3030;
-
 // as of now make sure the images are jpeg or png
 const mimeTypeMap = {
   ".png": "image/png",
