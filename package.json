@@ -1,7 +1,8 @@
 {
   "name": "ngal",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A simple image gallery generator powered by NodeJS",
+  "repository": "aktsbot/ngal",
   "main": "ngal.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
