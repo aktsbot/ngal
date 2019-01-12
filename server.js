@@ -26,9 +26,11 @@ const mimeTypeMap = {
 
 const buildHTML = () => {
   // get list of files that are png and jpg
+  // the map fn is used to convert spaces to %20
   const images = fs
     .readdirSync(__dirname)
-    .filter(fileName => fileName.endsWith(".jpg") || fileName.endsWith(".png"));
+    .filter(fileName => fileName.endsWith(".jpg") || fileName.endsWith(".png"))
+    .map(fileName => encodeURI(fileName));
 
   let imageLinks = "";
 
@@ -116,6 +118,9 @@ const server = http.createServer((req, res) => {
   // to search the folder, we need a '.' at the start
   // so /x.png becomes ./x.png
   pathName = `.${pathName}`;
+  // if the filename has spaces, we'll get a %20,
+  // convert that back to a space
+  pathName = decodeURI(pathName);
 
   // -- check file exists - start
   fs.exists(pathName, exist => {
